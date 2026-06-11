@@ -8,24 +8,24 @@
   @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@500;700&display=swap');
   
   :root {
-    --bg-main: #f0f4f8;
-    --bg-sidebar: #ffdf6d; /* Amarillo caricatura */
-    --card-bg: #ffffff;
-    --text-dark: #1e293b;
-    --text-muted: #64748b;
+    --bg-main: #0f172a; /* Fondo ultra oscuro */
+    --bg-sidebar: #1e293b; /* Sidebar oscuro */
+    --card-bg: #1e293b;
+    --text-dark: #f8fafc; /* Texto claro */
+    --text-muted: #94a3b8;
     
-    /* Colores vibrantes estilo Cartoon */
-    --color-dash: #ff7675;   /* Coral */
-    --color-tareas: #74b9ff; /* Azul cielo */
-    --color-archivos: #a29bfe;/* Morado pastel */
-    --color-notas: #55efc4;   /* Verde menta */
-    --color-cal: #ffeaa7;     /* Amarillo pastel */
+    /* Colores estilo neón / Cyberpunk */
+    --color-dash: #ff7675;   
+    --color-tareas: #38bdf8; 
+    --color-archivos: #a29bfe;
+    --color-notas: #34d399;   
+    --color-cal: #fbbf24;     
     
     --font-fun: 'Fredoka', sans-serif;
     --font-body: 'Quicksand', sans-serif;
-    --cartoon-border: 3px solid #1e293b;
-    --cartoon-shadow: 5px 5px 0px #1e293b;
-    --cartoon-shadow-sm: 3px 3px 0px #1e293b;
+    --cartoon-border: 3px solid #000000;
+    --cartoon-shadow: 5px 5px 0px #000000;
+    --cartoon-shadow-sm: 3px 3px 0px #000000;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -39,7 +39,7 @@
     overflow: hidden; 
   }
 
-  /* SIDEBAR CARTOON */
+  /* SIDEBAR */
   .sidebar { 
     width: 250px; 
     flex-shrink: 0; 
@@ -48,12 +48,11 @@
     display: flex; 
     flex-direction: column;
     padding: 1rem;
-    box-shadow: 5px 0px 0px rgba(0,0,0,0.05);
   }
   
   .logo { 
     padding: 1rem; 
-    background: #ffffff;
+    background: #0f172a;
     border: var(--cartoon-border);
     border-radius: 16px;
     box-shadow: var(--cartoon-shadow-sm);
@@ -70,7 +69,7 @@
     font-family: var(--font-fun);
     font-size: 18px; 
     font-weight: 700; 
-    color: var(--text-dark); 
+    color: white; 
     margin-top: 2px;
   }
 
@@ -84,9 +83,9 @@
     font-family: var(--font-fun);
     font-size: 16px; 
     font-weight: 600;
-    color: var(--text-dark); 
+    color: #94a3b8; 
     cursor: pointer; 
-    background: #ffffff;
+    background: #0f172a;
     border: var(--cartoon-border);
     border-radius: 14px;
     box-shadow: var(--cartoon-shadow-sm);
@@ -94,25 +93,22 @@
   }
   .nav-item:hover { 
     transform: translate(-2px, -2px);
-    box-shadow: 5px 5px 0px #1e293b;
-  }
-  .nav-item:active {
-    transform: translate(2px, 2px);
-    box-shadow: 1px 1px 0px #1e293b;
+    box-shadow: 5px 5px 0px #000000;
+    color: white;
   }
   
   /* Colores activos del menú */
   .nav-item.active[data-tab="dashboard"] { background: var(--color-dash); color: white; }
-  .nav-item.active[data-tab="tareas"] { background: var(--color-tareas); color: white; }
+  .nav-item.active[data-tab="tareas"] { background: var(--color-tareas); color: #0f172a; }
   .nav-item.active[data-tab="archivos"] { background: var(--color-archivos); color: white; }
-  .nav-item.active[data-tab="notas"] { background: var(--color-notas); }
-  .nav-item.active[data-tab="calendario"] { background: var(--color-cal); }
+  .nav-item.active[data-tab="notas"] { background: var(--color-notas); color: #0f172a; }
+  .nav-item.active[data-tab="calendario"] { background: var(--color-cal); color: #0f172a; }
 
   .nav-item .icon { font-size: 20px; }
   
   .sidebar-footer { 
     padding: 0.75rem; 
-    background: #ffffff; 
+    background: #0f172a; 
     border: var(--cartoon-border); 
     border-radius: 12px;
     font-family: var(--font-fun); 
@@ -125,15 +121,15 @@
     width: 8px; 
     height: 8px; 
     border-radius: 50%; 
-    background: #55efc4; 
+    background: #34d399; 
     margin-right: 6px; 
-    border: 1px solid #1e293b;
+    border: 1px solid #000;
   }
 
   /* CONTENIDO PRINCIPAL */
   .main { flex: 1; overflow-y: auto; padding: 2rem; }
   .main::-webkit-scrollbar { width: 8px; }
-  .main::-webkit-scrollbar-thumb { background: var(--text-dark); border-radius: 4px; }
+  .main::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
 
   .section { display: none; }
   .section.active { display: block; }
@@ -147,7 +143,7 @@
   .section-icon { 
     width: 50px; 
     height: 50px; 
-    background: #ffffff; 
+    background: #1e293b; 
     border: var(--cartoon-border); 
     border-radius: 14px; 
     display: flex; 
@@ -159,7 +155,7 @@
   .section-title { font-family: var(--font-fun); font-size: 26px; font-weight: 700; }
   .section-sub { font-size: 14px; color: var(--text-muted); font-weight: 500; }
 
-  /* TARJETAS ESTILO DIBUJO ANIMADO */
+  /* TARJETAS */
   .card { 
     background: var(--card-bg); 
     border: var(--cartoon-border); 
@@ -171,39 +167,37 @@
   .card-title { 
     font-family: var(--font-fun); 
     font-size: 16px; 
-    color: var(--text-dark); 
+    color: white; 
     text-transform: uppercase; 
     letter-spacing: 0.5px; 
     margin-bottom: 1.25rem; 
-    background: #f0f4f8;
+    background: #0f172a;
     display: inline-block;
     padding: 4px 12px;
     border: var(--cartoon-border);
     border-radius: 8px;
   }
 
-  /* MÉTRICAS / BLOQUES */
+  /* MÉTRICAS */
   .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 1.5rem; }
   .metric { 
-    background: #ffffff; 
+    background: #1e293b; 
     border: var(--cartoon-border); 
     border-radius: 18px; 
     padding: 1.25rem; 
     box-shadow: var(--cartoon-shadow);
-    transition: transform 0.15s ease;
   }
-  .metric:hover { transform: translateY(-3px); }
   .metric .m-label { font-family: var(--font-fun); font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
-  .metric .m-value { font-family: var(--font-fun); font-size: 32px; font-weight: 700; color: var(--text-dark); }
+  .metric .m-value { font-family: var(--font-fun); font-size: 32px; font-weight: 700; color: white; }
   .metric .m-sub { font-size: 13px; color: var(--text-muted); font-weight: 500; }
 
-  /* FILAS DE TAREAS E ITEMS */
+  /* FILAS DE ITEMS */
   .task-item { 
     display: flex; 
     align-items: center; 
     gap: 12px; 
     padding: 12px; 
-    background: #ffffff;
+    background: #0f172a;
     border: var(--cartoon-border);
     border-radius: 12px;
     margin-bottom: 8px;
@@ -215,12 +209,11 @@
     height: 20px; 
     accent-color: #ff7675; 
     cursor: pointer; 
-    border: var(--cartoon-border);
   }
   .task-name { flex: 1; font-weight: 700; }
-  .task-due { font-family: var(--font-fun); font-size: 12px; color: var(--text-muted); background: #f0f4f8; padding: 2px 8px; border-radius: 6px; border: 1px solid #cbd5e1; }
+  .task-due { font-family: var(--font-fun); font-size: 12px; color: var(--text-muted); background: #1e293b; padding: 2px 8px; border-radius: 6px; border: 1px solid #334155; }
 
-  /* BOTONES Y FORMULARIOS */
+  /* BADGES */
   .badge { 
     display: inline-block; 
     font-size: 11px; 
@@ -228,17 +221,17 @@
     border-radius: 8px; 
     font-family: var(--font-fun); 
     font-weight: 700;
-    border: 2px solid #1e293b;
+    border: 2px solid #000;
   }
   .b-red { background: #ff7675; color: white; }
-  .b-amber { background: #ffeaa7; color: #1e293b; }
-  .b-green { background: #55efc4; color: #1e293b; }
+  .b-amber { background: #fbbf24; color: #0f172a; }
+  .b-green { background: #34d399; color: #0f172a; }
 
   input[type=text], input[type=date], input[type=number], select, textarea { 
-    background: #ffffff; 
+    background: #0f172a; 
     border: var(--cartoon-border); 
     border-radius: 10px; 
-    color: var(--text-dark); 
+    color: white; 
     font-family: var(--font-body); 
     font-size: 14px; 
     font-weight: 600;
@@ -262,13 +255,12 @@
     box-shadow: var(--cartoon-shadow-sm);
     transition: all 0.1s;
   }
-  .btn:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0px #1e293b; }
-  .btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0px #1e293b; }
+  .btn:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0px #000000; }
 
   .btn-outline { 
-    background: #ffffff; 
+    background: #0f172a; 
     border: var(--cartoon-border); 
-    color: var(--text-dark); 
+    color: white; 
     border-radius: 12px; 
     padding: 10px 20px; 
     font-family: var(--font-fun); 
@@ -276,97 +268,56 @@
     cursor: pointer; 
     box-shadow: var(--cartoon-shadow-sm);
   }
-  .btn-outline:hover { background: #f8fafc; }
-
-  /* ZONA DE CARGA */
-  .upload-zone { 
-    border: 3px dashed #1e293b; 
-    border-radius: 20px; 
-    padding: 2.5rem; 
-    text-align: center; 
-    color: var(--text-dark); 
-    font-weight: 700;
-    font-family: var(--font-fun);
-    cursor: pointer; 
-    margin-bottom: 1.5rem; 
-    background: #ffffff; 
-    box-shadow: var(--cartoon-shadow);
-  }
-  .upload-zone:hover { background: #ffeaa7; }
-  .upload-icon { font-size: 36px; margin-bottom: 8px; display: block; }
-
-  /* TARJETAS DE RAMOS */
-  .ramo-card { 
-    background: #ffffff; 
-    border: var(--cartoon-border); 
-    border-radius: 18px; 
-    padding: 1.25rem; 
-    margin-bottom: 12px; 
-    box-shadow: var(--cartoon-shadow);
-  }
-  .ramo-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-  .ramo-name { font-family: var(--font-fun); font-size: 18px; font-weight: 700; }
-  .ramo-prom { font-family: var(--font-fun); font-size: 22px; font-weight: 700; background: #1e293b; color: #fff; padding: 2px 12px; border-radius: 10px; }
-  
-  .badge-eximido { 
-    font-family: var(--font-fun); font-size: 12px; font-weight: 700; color: #1e293b; 
-    background: #55efc4; border: 2px solid #1e293b; padding: 4px 8px; border-radius: 8px; box-shadow: 2px 2px 0px #1e293b;
-  }
-
-  .nota-row { display: flex; align-items: center; gap: 10px; font-size: 13px; margin-bottom: 8px; font-weight: 700; flex-wrap: wrap; }
-  .nota-row span:first-child { min-width: 220px; }
-  .nota-row input { width: 65px; text-align: center; font-family: var(--font-fun); font-size: 14px; padding: 5px; }
-  
-  .nota-pond { color: var(--text-muted); min-width: 90px; }
-  .nota-listo { font-family: var(--font-fun); background: #55efc4; border: 2px solid #1e293b; padding: 3px 8px; border-radius: 6px; cursor: pointer; }
-  .nota-pendiente { font-family: var(--font-fun); background: #ffeaa7; border: 2px solid #1e293b; padding: 3px 8px; border-radius: 6px; cursor: pointer; }
-
-  .nota-fecha { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-family: var(--font-fun); padding: 4px 8px; border-radius: 8px; border: 2px solid #1e293b; }
-  .nota-fecha.fecha-urgente { background: #ff7675; color: white; }
-  .nota-fecha.fecha-pronto  { background: #ffeaa7; color: #1e293b; }
-  .nota-fecha.fecha-ok      { background: #f0f4f8; color: #1e293b; }
-
-  .progress-bar { height: 14px; background: #e2e8f0; border: 2px solid #1e293b; border-radius: 10px; margin-top: 10px; overflow: hidden; }
-  .progress-fill { height: 100%; background: #ff7675; }
 
   /* CALENDARIO */
   .cal-nav-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
   .cal-mes { font-family: var(--font-fun); font-size: 22px; font-weight: 700; }
-  .cal-btn { background: #ffffff; border: var(--cartoon-border); border-radius: 10px; width: 40px; height: 40px; cursor: pointer; font-size: 22px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-shadow: var(--cartoon-shadow-sm); }
-  .cal-btn:active { transform: translate(1px, 1px); box-shadow: none; }
+  .cal-btn { background: #0f172a; border: var(--cartoon-border); border-radius: 10px; width: 40px; height: 40px; cursor: pointer; color:white; font-size: 22px; display: flex; align-items: center; justify-content: center; box-shadow: var(--cartoon-shadow-sm); }
 
   .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
-  .cal-dh { text-align: center; font-size: 13px; font-family: var(--font-fun); font-weight: 700; padding: 6px 0; color: var(--text-dark); }
+  .cal-dh { text-align: center; font-size: 13px; font-family: var(--font-fun); font-weight: 700; padding: 6px 0; color: var(--text-muted); }
   
   .cal-day { 
-    min-height: 95px; background: #ffffff; border: 2px solid #1e293b; border-radius: 14px; padding: 6px; 
+    min-height: 95px; background: #0f172a; border: 2px solid #334155; border-radius: 14px; padding: 6px; 
     cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.1s;
-    box-shadow: 2px 2px 0px #1e293b;
+    box-shadow: 2px 2px 0px #000;
   }
-  .cal-day:hover { transform: scale(1.03); box-shadow: 4px 4px 0px #1e293b; border-color: #ff7675; }
-  .cal-day .dn { font-family: var(--font-fun); font-weight: 700; font-size: 16px; color: var(--text-dark); }
-  .cal-day.today { background: #ffeaa7; border: 3px solid #ff7675; }
-  .cal-day.today .dn { color: #ff7675; font-size: 18px; }
+  .cal-day:hover { border-color: #ff7675; transform: scale(1.02); }
+  .cal-day .dn { font-family: var(--font-fun); font-weight: 700; font-size: 16px; color: white; }
+  .cal-day.today { background: #1e293b; border: 3px solid #ff7675; }
   
   .cal-events-container { margin-top: 4px; display: flex; flex-direction: column; gap: 3px; }
-  .cal-ev { font-size: 10px; font-family: var(--font-fun); font-weight: 700; background: #ff7675; color: white; border: 1px solid #1e293b; border-radius: 6px; padding: 1px 4px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
-  .cal-day-note-indicator { font-size: 10px; font-family: var(--font-fun); font-weight: 700; background: #55efc4; border: 1px solid #1e293b; border-radius: 6px; padding: 1px 4px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; margin-top: 1px; color: #1e293b; }
+  .cal-ev { font-size: 10px; font-family: var(--font-fun); font-weight: 700; background: #ff7675; color: white; border: 1px solid #000; border-radius: 6px; padding: 1px 4px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+  .cal-day-note-indicator { font-size: 10px; font-family: var(--font-fun); font-weight: 700; background: #34d399; border: 1px solid #000; border-radius: 6px; padding: 1px 4px; color: #0f172a; text-align: center; }
 
-  /* VENTANA MODAL (NOTAS CALENDARIO) */
-  .modal-overlay { position: fixed; inset: 0; background: rgba(30,41,59,0.5); backdrop-filter: blur(4px); z-index: 10000; display: none; align-items: center; justify-content: center; }
+  /* RAMO CARDS */
+  .ramo-card { background: #1e293b; border: var(--cartoon-border); border-radius: 18px; padding: 1.25rem; margin-bottom: 12px; box-shadow: var(--cartoon-shadow); }
+  .ramo-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+  .ramo-name { font-family: var(--font-fun); font-size: 18px; font-weight: 700; }
+  .ramo-prom { font-family: var(--font-fun); font-size: 22px; font-weight: 700; background: #0f172a; color: #fff; padding: 2px 12px; border-radius: 10px; border: 2px solid #000; }
+  
+  .nota-row { display: flex; align-items: center; gap: 10px; font-size: 13px; margin-bottom: 8px; font-weight: 700; flex-wrap: wrap; }
+  .nota-row span:first-child { min-width: 220px; }
+  .nota-row input { width: 65px; text-align: center; font-family: var(--font-fun); font-size: 14px; padding: 5px; }
+  .nota-pond { color: var(--text-muted); min-width: 90px; }
+  
+  .nota-listo { font-family: var(--font-fun); background: #34d399; color: #0f172a; border: 2px solid #000; padding: 3px 8px; border-radius: 6px; cursor: pointer; }
+  .nota-pendiente { font-family: var(--font-fun); background: #fbbf24; color: #0f172a; border: 2px solid #000; padding: 3px 8px; border-radius: 6px; cursor: pointer; }
+  .nota-fecha { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-family: var(--font-fun); padding: 4px 8px; border-radius: 8px; border: 2px solid #000; background: #0f172a; }
+
+  .progress-bar { height: 14px; background: #0f172a; border: 2px solid #000; border-radius: 10px; margin-top: 10px; overflow: hidden; }
+  .progress-fill { height: 100%; background: #ff7675; transition: width 0.3s; }
+
+  /* MODAL */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.8); backdrop-filter: blur(4px); z-index: 10000; display: none; align-items: center; justify-content: center; }
   .modal-overlay.open { display: flex; }
-  .modal-card { background: #ffffff; border: var(--cartoon-border); border-radius: 24px; width: 90%; max-width: 400px; padding: 1.5rem; box-shadow: var(--cartoon-shadow); }
+  .modal-card { background: #1e293b; border: var(--cartoon-border); border-radius: 24px; width: 90%; max-width: 400px; padding: 1.5rem; box-shadow: var(--cartoon-shadow); }
   .modal-title { font-family: var(--font-fun); font-size: 18px; font-weight: 700; color: #ff7675; margin-bottom: 0.5rem; }
-  .modal-subtitle { font-size: 13px; color: var(--text-muted); font-weight: 600; margin-bottom: 1rem; }
-  .modal-textarea { width: 100%; height: 110px; border: var(--cartoon-border); border-radius: 12px; padding: 10px; font-family: var(--font-body); font-weight: 600; font-size: 14px; resize: none; margin-bottom: 1.25rem; }
+  .modal-textarea { width: 100%; height: 110px; background: #0f172a; color: white; border: var(--cartoon-border); border-radius: 12px; padding: 10px; font-size: 14px; resize: none; margin-bottom: 1.25rem; }
   .modal-buttons { display: flex; justify-content: flex-end; gap: 10px; }
-
+  .badge-eximido { font-family: var(--font-fun); font-size: 12px; background: #34d399; color: #0f172a; border: 2px solid #000; padding: 4px 8px; border-radius: 8px; }
   .prog-row { margin-bottom: 12px; font-weight: 700; }
   .prog-label { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 4px; }
-  .add-ramo-form { background: #f8fafc; border: var(--cartoon-border); border-radius: 14px; padding: 1rem; margin-bottom: 1rem; display: none; }
-  .add-ramo-form.open { display: block; }
-  .eval-row { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; }
-  .eval-row input { flex: 1; }
 </style>
 </head>
 <body>
@@ -379,24 +330,21 @@
   <nav class="nav">
     <div class="nav-item active" data-tab="dashboard" onclick="show('dashboard',this)"><span class="icon">🏠</span> Dashboard</div>
     <div class="nav-item" data-tab="tareas" onclick="show('tareas',this)"><span class="icon">✏️</span> Tareas</div>
-    <div class="nav-item" data-tab="archivos" onclick="show('archivos',this)"><span class="icon">📁</span> Archivos</div>
     <div class="nav-item" data-tab="notas" onclick="show('notas',this)"><span class="icon">💯</span> Notas</div>
     <div class="nav-item" data-tab="calendario" onclick="show('calendario',this)"><span class="icon">📅</span> Calendario</div>
   </nav>
-  <div class="sidebar-footer"><span class="status-dot"></span>¡TODO EN LÍNEA!</div>
+  <div class="sidebar-footer"><span class="status-dot"></span>MEMORIA EN VIVO</div>
 </div>
 
 <div class="main">
-
   <div class="section active" id="dashboard">
     <div class="section-header">
       <div class="section-icon">🏠</div>
       <div><div class="section-title">Mi Resumen</div><div class="section-sub">¿Cómo vamos para hoy?</div></div>
     </div>
     <div class="metrics">
-      <div class="metric"><div class="m-label">✏️ TAREAS POR HACER</div><div class="m-value" id="d-tareas">—</div><div class="m-sub" id="d-tareas-sub">0 pendientes</div></div>
-      <div class="metric"><div class="m-label">💯 TU PROMEDIO</div><div class="m-value" id="d-prom">—</div><div class="m-sub" id="d-ramos-sub">Cargando ramos...</div></div>
-      <div class="metric"><div class="m-label">📁 DOCUMENTOS</div><div class="m-value" id="d-arch">0</div><div class="m-sub">guardados</div></div>
+      <div class="metric"><div class="m-label">✏️ TAREAS ACTIVAS</div><div class="m-value" id="d-tareas">—</div><div class="m-sub" id="d-tareas-sub">0 pendientes</div></div>
+      <div class="metric"><div class="m-label">💯 TU PROMEDIO</div><div class="m-value" id="d-prom">—</div><div class="m-sub" id="d-ramos-sub">6 ramos activos</div></div>
     </div>
     <div class="card"><div class="card-title">🔥 Próximas evaluaciones</div><div id="d-proximas"></div></div>
     <div class="card"><div class="card-title">📊 El termómetro de tus ramos</div><div id="d-ramos-prog"></div></div>
@@ -417,39 +365,13 @@
       </div>
       <button class="btn" onclick="agregarTarea()">✨ ¡AGREGAR TAREA!</button>
     </div>
-    <div class="card" id="lista-tareas"><div class="card-title">📌 Lista de pendientes</div><div id="tareas-empty" style="font-size:14px;color:var(--text-muted);font-weight:600;padding:8px 0;">¡No hay tareas pendientes! A descansar 🎉</div></div>
-  </div>
-
-  <div class="section" id="archivos">
-    <div class="section-header">
-      <div class="section-icon">📁</div>
-      <div><div class="section-title">Baúl de Archivos</div><div class="section-sub">Guarda tus apuntes y guías aquí</div></div>
-    </div>
-    <div class="upload-zone" onclick="simUpload()"><span class="upload-icon">🚀</span>¡Haz clic aquí para lanzar un archivo!</div>
-    <div class="card" id="lista-archivos"><div class="card-title">📂 Documentos guardados</div><div id="arch-empty" style="font-size:14px;color:var(--text-muted);font-weight:600;padding:8px 0;">Aún no guardas archivos.</div></div>
+    <div class="card" id="lista-tareas"><div class="card-title">📌 Lista de pendientes</div><div id="tareas-empty" style="font-size:14px;color:var(--text-muted);font-weight:600;padding:8px 0;">¡No hay tareas pendientes! 🎉</div></div>
   </div>
 
   <div class="section" id="notas">
     <div class="section-header">
       <div class="section-icon">💯</div>
-      <div><div class="section-title">Calculadora de Notas</div><div class="section-sub">¡Lleva el control de tus notas del semestre!</div></div>
-    </div>
-    <div class="card">
-      <div class="card-title">📘 Agregar un nuevo ramo</div>
-      <div class="input-row">
-        <input type="text" id="r-nombre" placeholder="Nombre de la asignatura...">
-        <button class="btn" onclick="toggleAddRamo()">⚙️ CONFIGURAR PRUEBAS</button>
-      </div>
-      <div class="add-ramo-form" id="add-ramo-form">
-        <div style="font-size:13px;font-weight:600;margin-bottom:8px;">⚠️ Los porcentajes deben sumar exactamente 100%</div>
-        <div id="evals-container">
-          <div class="eval-row"><input type="text" placeholder="Ej: Solemne 1" style="flex:2"><input type="number" placeholder="%" min="1" max="100" style="width:70px"><button class="btn-outline" onclick="quitarEval(this)" style="padding:6px 12px;">✕</button></div>
-        </div>
-        <div style="display:flex;gap:10px;margin-top:10px;">
-          <button class="btn-outline" onclick="addEvalRow()">➕ Otra fila</button>
-          <button class="btn" onclick="guardarRamo()">💾 GUARDAR ASIGNATURA</button>
-        </div>
-      </div>
+      <div><div class="section-title">Calculadora de Notas (Autoguardado Automático)</div><div class="section-sub">¡Pon tus notas y se guardarán solas en tu dispositivo!</div></div>
     </div>
     <div id="ramos-container"></div>
   </div>
@@ -471,14 +393,12 @@
       </div>
     </div>
   </div>
-
 </div>
 
 <div class="modal-overlay" id="cal-modal">
   <div class="modal-card">
     <div class="modal-title" id="modal-date-title">📝 Nota de este día</div>
-    <div class="modal-subtitle">Escribe un recordatorio o apunte para esta fecha:</div>
-    <textarea class="modal-textarea" id="modal-note-text" placeholder="Ej: No olvidar llevar la cartulina o repasar materia..."></textarea>
+    <textarea class="modal-textarea" id="modal-note-text" placeholder="Escribe algo..."></textarea>
     <div class="modal-buttons">
       <button class="btn-outline" onclick="closeModal()">VOLVER</button>
       <button class="btn" onclick="saveDayNote()">💾 GUARDAR</button>
@@ -487,7 +407,7 @@
 </div>
 
 <script>
-// Ramos oficiales cargados automáticamente al inicio si no hay memoria previa
+// Base de datos estática inicial para el semestre (se clona si localStorage está vacío)
 const RAMOS_INICIALES = [
   {
     nombre: "Álgebra I",
@@ -549,25 +469,21 @@ const RAMOS_INICIALES = [
 const MESES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 
 let tareas = [];
-let archivos = [];
 let ramos = [];
 let notasCalendario = {};
-let calDate = new Date(2026, 5, 1); // Empezamos por defecto en Junio 2026
+let calDate = new Date(2026, 5, 1);
 let fechaSeleccionadaModal = "";
 
-// Parsea las fechas considerando el huso horario local correctamente sin desfases
 function parseFechaLocal(str) {
   if (!str) return null;
   const partes = str.split('-');
-  if (partes.length !== 3) return null;
-  return new Date(parseInt(partes[0]), parseInt(partes[1]) - 1, parseInt(partes[2]), 0, 0, 0, 0);
+  return new Date(parseInt(partes[0]), parseInt(partes[1]) - 1, parseInt(partes[2]));
 }
 
 function init() {
   loadData();
   if (ramos.length === 0) ramos = JSON.parse(JSON.stringify(RAMOS_INICIALES));
   renderTareas();
-  renderArchivos();
   renderRamos();
   updateSelectRamo();
   updateDashboard();
@@ -583,7 +499,7 @@ function show(id, el) {
   if (id === 'calendario') renderCalendar();
 }
 
-// GESTIÓN DE TAREAS
+// TAREAS AUTOGUARDADAS
 function agregarTarea() {
   const nombre = document.getElementById('t-nombre').value.trim();
   const fecha = document.getElementById('t-fecha').value;
@@ -606,8 +522,7 @@ function renderTareas() {
   
   const labels = {red:'🚨 ¡URGENTE!', amber:'⏳ MEDIA', green:'✅ TRANQUI'};
   pending.forEach(t => {
-    const div = document.createElement('div');
-    div.className = 'task-item';
+    const div = document.createElement('div'); div.className = 'task-item';
     div.innerHTML = `<input type="checkbox" class="task-cb" onchange="toggleTarea(${t.id})"><span class="task-name">${t.nombre}${t.ramo?` <span style="color:var(--text-muted);font-size:12px;">[${t.ramo}]</span>`:''}</span><span class="badge b-${t.prior}">${labels[t.prior]}</span><span class="task-due">${t.fecha||'S/F'}</span>`;
     lista.appendChild(div);
   });
@@ -618,57 +533,7 @@ function toggleTarea(id) {
   if (t) { t.done = true; renderTareas(); updateDashboard(); saveData(); }
 }
 
-// GESTIÓN DE ARCHIVOS (SIMULADO)
-const nombresEjemplo = ['Apuntes_Algebra.pdf','Guia_Programacion.docx','Laboratorio_Redes.zip','Resumen_IA.pdf'];
-function simUpload() {
-  const nombre = nombresEjemplo[Math.floor(Math.random()*nombresEjemplo.length)];
-  archivos.unshift({ nombre, fecha:'Hoy', size:(Math.random()*2+0.5).toFixed(1)+' MB', id:Date.now() });
-  renderArchivos(); updateDashboard(); saveData();
-}
-
-function renderArchivos() {
-  const lista = document.getElementById('lista-archivos');
-  lista.querySelectorAll('.task-item').forEach(e => e.remove());
-  const empty = document.getElementById('arch-empty');
-  if (archivos.length === 0) { if (empty) empty.style.display='block'; return; }
-  if (empty) empty.style.display='none';
-  archivos.forEach(a => {
-    const div = document.createElement('div'); div.className='task-item';
-    div.innerHTML = `<span style="font-size:18px; margin-right:8px;">📄</span><span class="task-name">${a.nombre}</span><span class="task-due">${a.size} · ${a.fecha}</span>`;
-    lista.appendChild(div);
-  });
-}
-
-// GESTIÓN DE ASIGNATURAS Y CALCULADORA
-function toggleAddRamo() { document.getElementById('add-ramo-form').classList.toggle('open'); }
-function addEvalRow() {
-  const c = document.getElementById('evals-container');
-  const div = document.createElement('div'); div.className='eval-row';
-  div.innerHTML = `<input type="text" placeholder="Ej: Control" style="flex:2"><input type="number" placeholder="%" min="1" max="100" style="width:70px"><button class="btn-outline" onclick="quitarEval(this)" style="padding:6px 12px;">✕</button>`;
-  c.appendChild(div);
-}
-function quitarEval(btn) { btn.closest('.eval-row').remove(); }
-
-function guardarRamo() {
-  const nombre = document.getElementById('r-nombre').value.trim();
-  if (!nombre) return alert('Escribe el nombre de la asignatura');
-  const rows = document.querySelectorAll('#evals-container .eval-row');
-  const evals = []; let totalPorc = 0;
-  rows.forEach(r => {
-    const inputs = r.querySelectorAll('input');
-    const n = inputs[0].value.trim(); const p = parseFloat(inputs[1].value);
-    if (n && p) { evals.push({ nombre:n, porcentaje:p, nota:null, fecha:null, listo:false }); totalPorc += p; }
-  });
-  if (evals.length === 0) return alert('Agrega al menos una evaluación');
-  if (Math.abs(totalPorc-100) > 1) return alert(`Los porcentajes suman ${totalPorc}%, ¡tienen que sumar exactamente 100%!`);
-  
-  ramos.push({ nombre, evals, id:Date.now() });
-  document.getElementById('r-nombre').value = '';
-  document.getElementById('evals-container').innerHTML = `<div class="eval-row"><input type="text" placeholder="Ej: Solemne 1" style="flex:2"><input type="number" placeholder="%" min="1" max="100" style="width:70px"><button class="btn-outline" onclick="quitarEval(this)" style="padding:6px 12px;">✕</button></div>`;
-  document.getElementById('add-ramo-form').classList.remove('open');
-  renderRamos(); updateSelectRamo(); updateDashboard(); saveData();
-}
-
+// CALCULADORA CON AUTOGUARDADO AUTOMÁTICO REPARADO
 function calcProm(r) {
   let total = 0, totalPorc = 0;
   r.evals.forEach(e => { if (e.nota != null && e.nota > 0) { total += e.nota * e.porcentaje / 100; totalPorc += e.porcentaje; } });
@@ -683,31 +548,21 @@ function renderRamos() {
     const prom = calcProm(r);
     const progW = prom != null ? Math.round((prom-1)/6*100) : 0;
     const div = document.createElement('div'); div.className='ramo-card';
-    
     const eximidoTag = (prom !== null && prom >= 5.5) ? `<span class="badge-eximido">¡EXIMIDO! 🎉</span>` : '';
-    const colorBarra = prom == null ? '#cbd5e1' : prom >= 5.5 ? '#55efc4' : prom >= 4.0 ? '#ffeaa7' : '#ff7675';
+    const colorBarra = prom == null ? '#334155' : prom >= 5.5 ? '#34d399' : prom >= 4.0 ? '#fbbf24' : '#ff7675';
 
     let evalsHtml = r.evals.map((e, ei) => {
       const pond = (e.nota != null && e.nota > 0) ? (e.nota * e.porcentaje/100).toFixed(2) : '—';
       const listoTag = e.listo ? `<span class="nota-listo" onclick="toggleEvalListo(${ri},${ei})">✅ HECHO</span>` : `<span class="nota-pendiente" onclick="toggleEvalListo(${ri},${ei})">⏳ PENDIENTE</span>`;
       let fechaTag = '';
       if (e.fecha) {
-        const hoy = new Date(); hoy.setHours(0,0,0,0);
         const fd = parseFechaLocal(e.fecha);
-        const dias = Math.round((fd - hoy)/(1000*60*60*24));
         const fechaStr = fd.toLocaleDateString('es-CL', {day:'2-digit', month:'short'}).toUpperCase();
-        if (dias < 0) {
-          fechaTag = `<span class="nota-fecha">📅 ${fechaStr}</span>`;
-        } else if (dias <= 3) {
-          const lbl = dias===0?'HOY':dias===1?'MAÑANA':`${dias} DÍAS`;
-          fechaTag = `<span class="nota-fecha fecha-urgente">⚠️ ${lbl}</span>`;
-        } else {
-          fechaTag = `<span class="nota-fecha fecha-pronto">📅 ${fechaStr}</span>`;
-        }
+        fechaTag = `<span class="nota-fecha">📅 ${fechaStr}</span>`;
       }
       return `<div class="nota-row">
         <span><b>${e.nombre}</b> (${e.porcentaje}%)</span>
-        <input type="number" value="${(e.nota != null && e.nota > 0) ? e.nota : ''}" min="1" max="7" step="0.1" placeholder="0.0" onchange="setNota(${ri},${ei},this.value)">
+        <input type="number" value="${(e.nota != null && e.nota > 0) ? e.nota : ''}" min="1" max="7" step="0.1" placeholder="0.0" oninput="setNotaAutomática(${ri},${ei},this.value)">
         <span class="nota-pond">Pond: ${pond}</span>
         ${fechaTag}
         ${listoTag}
@@ -728,16 +583,24 @@ function renderRamos() {
   });
 }
 
-function setNota(ri, ei, val) {
+// Esta función captura la nota apenas la escribes y la manda a la memoria al tiro
+function setNotaAutomática(ri, ei, val) {
   const valNum = parseFloat(val);
-  ramos[ri].evals[ei].nota = (!isNaN(valNum) && valNum >= 1 && valNum <= 7) ? valNum : null;
-  if(ramos[ri].evals[ei].nota !== null) ramos[ri].evals[ei].listo = true;
-  renderRamos(); updateDashboard(); saveData();
+  if (!isNaN(valNum) && valNum >= 1 && valNum <= 7) {
+    ramos[ri].evals[ei].nota = valNum;
+    ramos[ri].evals[ei].listo = true;
+  } else {
+    ramos[ri].evals[ei].nota = null;
+    ramos[ri].evals[ei].listo = false;
+  }
+  // Guarda automáticamente en localStorage y refresca el Dashboard en tiempo real
+  saveData();
+  updateDashboardLive(); 
 }
 
 function toggleEvalListo(ri, ei) {
   ramos[ri].evals[ei].listo = !ramos[ri].evals[ei].listo;
-  renderRamos(); updateDashboard(); saveData();
+  saveData(); renderRamos(); updateDashboardLive();
 }
 
 function updateSelectRamo() {
@@ -746,17 +609,25 @@ function updateSelectRamo() {
   ramos.forEach(r => { const opt = document.createElement('option'); opt.value=r.nombre; opt.textContent=r.nombre; sel.appendChild(opt); });
 }
 
-// DASHBOARD ACTUALIZACIÓN
-function updateDashboard() {
-  const pending = tareas.filter(t => !t.done);
-  document.getElementById('d-tareas').textContent = pending.length;
-  document.getElementById('d-tareas-sub').textContent = pending.length + ' por completar';
-  document.getElementById('d-arch').textContent = archivos.length;
-  
+// DASHBOARD SIN REFRESCAR PÁGINA
+function updateDashboardLive() {
   const proms = ramos.map(r => calcProm(r)).filter(p => p!=null);
   const promGen = proms.length > 0 ? (proms.reduce((a,b)=>a+b,0)/proms.length) : null;
   document.getElementById('d-prom').textContent = promGen != null ? promGen.toFixed(1) : '—';
-  document.getElementById('d-ramos-sub').textContent = ramos.length + ' ramos activos';
+  const ramosDiv = document.getElementById('d-ramos-prog');
+  ramosDiv.innerHTML = ramos.map(r => {
+    const p = calcProm(r);
+    const w = p != null ? Math.round((p-1)/6*100) : 0;
+    const color = p == null ? '#0f172a' : p >= 5.5 ? '#34d399' : p >= 4 ? '#fbbf24' : '#ff7675';
+    return `<div class="prog-row"><div class="prog-label"><span>📘 ${r.nombre}</span><span>${p != null ? p.toFixed(1) : '—'}</span></div><div class="progress-bar"><div class="progress-fill" style="width:${w}%;background:${color}"></div></div></div>`;
+  }).join('');
+}
+
+function updateDashboard() {
+  const pending = tareas.filter(t => !t.done);
+  document.getElementById('d-tareas').textContent = pending.length;
+  document.getElementById('d-tareas-sub').textContent = pending.length + ' pendientes';
+  updateDashboardLive();
 
   const hoy = new Date(); hoy.setHours(0,0,0,0);
   let proxEvals = [];
@@ -772,26 +643,17 @@ function updateDashboard() {
   
   const proxDiv = document.getElementById('d-proximas');
   if (proxEvals.length === 0) {
-    proxDiv.innerHTML = '<span style="color:var(--text-muted); font-weight:600;">🎉 ¡Libre de evaluaciones próximas!</span>';
+    proxDiv.innerHTML = '<span style="color:var(--text-muted); font-weight:600;">🎉 ¡Al día con todo!</span>';
   } else {
-    proxDiv.innerHTML = proxEvals.slice(0,4).map(e => {
+    proxDiv.innerHTML = proxEvals.slice(0,3).map(e => {
       const dias = Math.round(e.diff/(1000*60*60*24));
-      const label = dias===0 ? '¡HOY MISMÍSIMO!' : dias===1 ? '¡MAÑANA!' : `En ${dias} días`;
-      const cls = dias<=3 ? 'b-red' : 'b-amber';
-      return `<div class="task-item"><span class="task-name">💥 <b>${e.nombre}</b> <span style="color:var(--text-muted);">[${e.ramo}]</span></span><span class="badge ${cls}">${label}</span></div>`;
+      const label = dias===0 ? '¡HOY!' : dias===1 ? 'MAÑANA' : `${dias} días`;
+      return `<div class="task-item"><span class="task-name">💥 <b>${e.nombre}</b> <span style="color:var(--text-muted);">[${e.ramo}]</span></span><span class="badge b-red">${label}</span></div>`;
     }).join('');
   }
-
-  const ramosDiv = document.getElementById('d-ramos-prog');
-  ramosDiv.innerHTML = ramos.map(r => {
-    const p = calcProm(r);
-    const w = p != null ? Math.round((p-1)/6*100) : 0;
-    const color = p == null ? '#e2e8f0' : p >= 5.5 ? '#55efc4' : p >= 4 ? '#ffeaa7' : '#ff7675';
-    return `<div class="prog-row"><div class="prog-label"><span>📘 ${r.nombre}</span><span style="font-family:var(--font-fun);">${p != null ? p.toFixed(1) : '—'}</span></div><div class="progress-bar"><div class="progress-fill" style="width:${w}%;background:${color}"></div></div></div>`;
-  }).join('');
 }
 
-// CALENDARIO DINÁMICO
+// CALENDARIO AUTOGUARDADO
 function renderCalendar() {
   const grid = document.getElementById('cal-grid');
   const headers = Array.from(grid.querySelectorAll('.cal-dh'));
@@ -806,29 +668,6 @@ function renderCalendar() {
   
   const days = new Date(y,m+1,0).getDate();
   const today = new Date();
-  
-  const evMap = {};
-  ramos.forEach(r => {
-    r.evals.forEach(e => {
-      if (e.fecha) {
-        const d = parseFechaLocal(e.fecha);
-        if (d.getFullYear()===y && d.getMonth()===m) {
-          const day = d.getDate();
-          if (!evMap[day]) evMap[day] = [];
-          evMap[day].push({ tipo: 'eval', texto: e.nombre.split(' ').slice(0,2).join(' ') });
-        }
-      }
-    });
-  });
-
-  tareas.filter(t=>t.fecha).forEach(t => {
-    const d = parseFechaLocal(t.fecha);
-    if (d.getFullYear()===y && d.getMonth()===m) {
-      const day = d.getDate();
-      if (!evMap[day]) evMap[day] = [];
-      evMap[day].push({ tipo: 'tarea', texto: t.nombre });
-    }
-  });
 
   for (let d=1;d<=days;d++) {
     const div = document.createElement('div'); div.className='cal-day';
@@ -839,54 +678,35 @@ function renderCalendar() {
     const fechaClave = `${y}-${mmStr}-${ddStr}`;
 
     div.onclick = () => openModal(fechaClave, d, MESES[m], y);
-
-    let html = `<div class="dn">${d}</div>`;
-    html += `<div class="cal-events-container">`;
-    
-    if (evMap[d]) {
-      evMap[d].slice(0, 2).forEach(ev => { 
-        html += `<div class="cal-ev" style="${ev.tipo === 'tarea' ? 'background:#ff7675;' : 'background:#74b9ff;'}">${ev.texto}</div>`; 
-      });
-    }
-
-    // Aquí muestra el indicador si es que existe una nota de texto guardada en este día
+    let html = `<div class="dn">${d}</div><div class="cal-events-container">`;
     if (notasCalendario[fechaClave]) {
-      html += `<div class="cal-day-note-indicator" title="${notasCalendario[fechaClave]}">📝 Nota</div>`;
+      html += `<div class="cal-day-note-indicator">📝 Nota</div>`;
     }
-
     html += `</div>`;
     div.innerHTML = html; grid.appendChild(div);
   }
 }
 
 function changeMonth(dir) { calDate.setMonth(calDate.getMonth()+dir); renderCalendar(); }
-
 function openModal(fechaClave, dia, mesStr, anio) {
   fechaSeleccionadaModal = fechaClave;
   document.getElementById('modal-date-title').textContent = `📝 Notas del ${dia} de ${mesStr}`;
   document.getElementById('modal-note-text').value = notasCalendario[fechaClave] || "";
   document.getElementById('cal-modal').classList.add('open');
-  document.getElementById('modal-note-text').focus();
 }
-
 function closeModal() { document.getElementById('cal-modal').classList.remove('open'); }
-
 function saveDayNote() {
   const texto = document.getElementById('modal-note-text').value.trim();
-  if (texto === "") {
-    delete notasCalendario[fechaSeleccionadaModal];
-  } else {
-    notasCalendario[fechaSeleccionadaModal] = texto;
-  }
+  if (texto === "") delete notasCalendario[fechaSeleccionadaModal];
+  else notasCalendario[fechaSeleccionadaModal] = texto;
   saveData(); renderCalendar(); closeModal();
 }
 
-// ALMACENAMIENTO DE DATOS LOCALES (LOCALSTORAGE)
+// SISTEMA CENTRAL DE ALMACENAMIENTO (LOCALSTORAGE)
 function saveData() {
   try { 
-    localStorage.setItem('leo_tareas',JSON.stringify(tareas)); 
-    localStorage.setItem('leo_archivos',JSON.stringify(archivos)); 
-    localStorage.setItem('leo_ramos',JSON.stringify(ramos)); 
+    localStorage.setItem('leo_tareas', JSON.stringify(tareas)); 
+    localStorage.setItem('leo_ramos', JSON.stringify(ramos)); 
     localStorage.setItem('leo_notas_cal', JSON.stringify(notasCalendario));
   } catch(e) {}
 }
@@ -894,7 +714,6 @@ function saveData() {
 function loadData() {
   try {
     const t = localStorage.getItem('leo_tareas'); if (t) tareas = JSON.parse(t);
-    const a = localStorage.getItem('leo_archivos'); if (a) archivos = JSON.parse(a);
     const r = localStorage.getItem('leo_ramos'); if (r) ramos = JSON.parse(r);
     const nc = localStorage.getItem('leo_notas_cal'); if (nc) notasCalendario = JSON.parse(nc);
   } catch(e) {}
